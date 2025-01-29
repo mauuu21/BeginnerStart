@@ -72,10 +72,5 @@ public class Story {
     }
 
 
-    @Override
-    public String toString() {
-        return "Story{" +
-                "title='" + title + '\'' +
-                '}';
-    }
+
 }

@@ -1,5 +1,6 @@
 package com.mavenstarter.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 
@@ -18,6 +19,7 @@ public class Blogger {
     private String name;
     private int age;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "blogger")
     private List<Story> stories;
 

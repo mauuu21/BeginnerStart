@@ -1,11 +1,23 @@
 package com.mavenstarter.repository;
 
 import com.mavenstarter.entity.Blogger;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface BloggerRepository extends CrudRepository<Blogger, Long> {
+@Repository
+public class BloggerRepository {
 
-    List<Blogger> findAll();
+    private JdbcTemplate jdbc;
+
+    @Autowired
+    public BloggerRepository(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+//    @Query("select b from Blogger b")
+//    List<Blogger> findAll();
+
 }
