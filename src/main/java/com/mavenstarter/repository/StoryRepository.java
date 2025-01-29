@@ -22,8 +22,8 @@ public interface StoryRepository extends CrudRepository<Story, Long> {
 
     //@Query(value = "select * from story where title = ?1 limit 1", nativeQuery = true)
     //@Query(value = "select * from story where title = :title limit 1", nativeQuery = true)
-    @Query("select s from Story s where s.title = :title limit 1")
-    Story findByTitle(@Param("title")String title);
+    //@Query("select s from Story s where s.title = :title limit 1")
+    Story findByTitle(String title);
 
     List<Story> findAllByBloggerNameIgnoreCaseOrderByPostedDesc(String name);
 

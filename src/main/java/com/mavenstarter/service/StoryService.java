@@ -16,12 +16,12 @@ public class StoryService {
     private BloggerRepository bloggerRepository;
 
     @Autowired
-    public void setStoryRepository(StoryRepository storyRepo) {
+    public void setStoryRepository(StoryRepository storyRepository) {
         this.storyRepository = storyRepository;
     }
 
     @Autowired
-    public void setBloggerRepository(BloggerRepository bloggerRepo) {
+    public void setBloggerRepository(BloggerRepository bloggerRepository) {
         this.bloggerRepository = bloggerRepository;
     }
 

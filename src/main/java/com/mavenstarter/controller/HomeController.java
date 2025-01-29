@@ -30,29 +30,29 @@ public class HomeController {
         return "stories";
     }
 
-    @RequestMapping("/story")
-    public String story(Model model) {
-        model.addAttribute("pageTitle", "Minden napra egy Story");
-        model.addAttribute("story", storyService.getStory());
-        return "story";
-    }
+//    @RequestMapping("/story")
+//    public String story(Model model) {
+//        model.addAttribute("pageTitle", "Minden napra egy Story");
+//        model.addAttribute("story", storyService.getStory());
+//        return "story";
+//    }
 
-    @RequestMapping("/user/{id}")
-    public String searchForUser(@PathVariable(value="id") String id) throws Exception {
-        if(id == null) {
-            throw new Exception("Nincs ilyen Id-val felhasználó!");
-        }
-        return "user";
-    }
-
-    @RequestMapping("/title/{title}")
-    public String searchForTitle(@PathVariable(value="title") String title, Model model) throws Exception {
-        if(title == null) {
-            throw new Exception("There is no post with this title!");
-        }
-        model.addAttribute("story", storyService.getSpecificStory(title));
-        return "story";
-    }
+//    @RequestMapping("/user/{id}")
+//    public String searchForUser(@PathVariable(value="id") String id) throws Exception {
+//        if(id == null) {
+//            throw new Exception("Nincs ilyen Id-val felhasználó!");
+//        }
+//        return "user";
+//    }
+//
+//    @RequestMapping("/title/{title}")
+//    public String searchForTitle(@PathVariable(value="title") String title, Model model) throws Exception {
+//        if(title == null) {
+//            throw new Exception("There is no post with this title!");
+//        }
+//        model.addAttribute("story", storyService.getSpecificStory(title));
+//        return "story";
+//    }
 
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(HttpServletRequest rA, Exception ex, Model model) {
