@@ -30,6 +30,8 @@ public class HomeController {
         return "stories";
     }
 
+
+
 //    @RequestMapping("/story")
 //    public String story(Model model) {
 //        model.addAttribute("pageTitle", "Minden napra egy Story");

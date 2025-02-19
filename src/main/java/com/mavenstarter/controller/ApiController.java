@@ -3,6 +3,7 @@ package com.mavenstarter.controller;
 import com.mavenstarter.entity.Story;
 import com.mavenstarter.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +34,22 @@ public class ApiController {
     @RequestMapping("/stories/{name}")
     public List<Story> searchStoriesByBloggerName(@PathVariable(value = "name") String name) {
         return storyService.getStoriesByBloggerName(name);
+    }
+
+    @RequestMapping("/home/")
+    public String securityHome () {
+        return "Home";
+    }
+
+
+    @RequestMapping("/delete/")
+    public String securityDelete () {
+        return "Delete";
+    }
+
+
+    @RequestMapping("/check/")
+    public String securityCheck () {
+        return "Checked";
     }
 }
